@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minahil KTK ✧</title>
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;color:#fff8ff;
+ font-family:'Segoe UI',sans-serif;
+ background:linear-gradient(145deg,#180f2c,#302044,#19152e);
+ overflow-x:hidden;
+}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;
+ background-image:radial-gradient(#fff 1px,transparent 1.5px);
+ background-size:49px 49px;opacity:.35;
+}
+header{
+ position:sticky;top:0;z-index:5;
+ display:flex;justify-content:space-between;align-items:center;
+ padding:20px 8%;background:#1b122bd9;
+ backdrop-filter:blur(14px);border-bottom:1px solid #ffffff18;
+}
+.logo{font-size:21px;letter-spacing:3px;color:#ffd3ed}
+.logo span{color:#c9b6ff}
+nav a{
+ color:#eee1ff;text-decoration:none;margin-left:19px;
+ font-size:13px
+}
+nav a:hover{color:#ffc5e7}
+section{position:relative;z-index:1}
+.hero{
+ min-height:84vh;display:flex;align-items:center;
+ justify-content:center;text-align:center;padding:65px 20px;
+}
+.eyebrow{
+ text-transform:uppercase;letter-spacing:4px;
+ font-size:11px;color:#e5bde8
+}
+h1{
+ font-family:Georgia,serif;font-weight:normal;
+ font-size:clamp(46px,9vw,88px);line-height:1.12;
+ margin:22px 0
+}
+h1 span{color:#f5b9df;font-style:italic}
+.subtitle{
+ max-width:480px;margin:0 auto;color:#d6c8e6;
+ line-height:1.9;font-size:15px
+}
+.btn{
+ display:inline-block;border:1px solid #f6c5e6;
+ background:linear-gradient(110deg,#f5b9df,#d0baff);
+ color:#2b1838;border-radius:30px;padding:14px 24px;
+ margin:25px 6px 0;text-decoration:none;font-weight:600;
+ cursor:pointer;transition:.25s;font-size:13px
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px #e5a8ef35}
+.btn.outline{background:transparent;color:#ffe3f5}
+.moon{
+ font-size:64px;display:block;
+ filter:drop-shadow(0 0 22px #e7c4ff);
+ animation:float 4s ease-in-out infinite;
+}
+@keyframes float{50%{transform:translateY(-10px)}}
+.wrap{max-width:1000px;margin:auto;padding:65px 22px}
+.heading{text-align:center;margin-bottom:32px}
+.heading h2{font:normal 38px Georgia,serif;margin:12px 0}
+.heading p{color:#cdbedc;line-height:1.8}
+.cards{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:16px
+}
+.card{
+ padding:27px 20px;text-align:center;border-radius:22px;
+ border:1px solid #ffffff22;background:#ffffff0b;
+ backdrop-filter:blur(8px);transition:.25s;cursor:pointer;
+}
+.card:hover{transform:translateY(-5px);background:#ffffff15}
+.emoji{font-size:34px}
+.card h3{font:normal 22px Georgia,serif;color:#f8c8e5}
+.card p{font-size:13px;color:#d2c3e0;line-height:1.8}
+#message{
+ min-height:55px;color:#f9d6ec;text-align:center;
+ line-height:1.9;margin-top:25px
+}
+.moodbuttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.moodbuttons button{
+ background:#ffffff0c;border:1px solid #ffffff35;
+ color:#fff0fc;border-radius:25px;padding:12px 17px;cursor:pointer
+}
+.moodbuttons button:hover{background:#a77fc84a}
+.panel{
+ max-width:650px;margin:25px auto;padding:30px 20px;
+ border:1px solid #ffffff24;border-radius:24px;
+ background:#ffffff0a;text-align:center
+}
+.panel p{color:#d9cce7;line-height:1.9}
+footer{
+ position:relative;z-index:1;text-align:center;
+ padding:30px 15px;border-top:1px solid #ffffff18;
+ color:#bdaacb;font-size:12px;letter-spacing:1px
+}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+@media(max-width:650px){
+ header{padding:17px 5%;flex-wrap:wrap;gap:12px}
+ .logo{font-size:17px}
+ nav a{margin-left:10px;font-size:12px}
+ .cards{grid-template-columns:1fr}
+ .hero{min-height:78vh}
+ .wrap{padding:48px 18px}
+}
+</style>
+</head>
+
+<body>
+<canvas id="stars"></canvas>
+
+<header>
+ <div class="logo">MINAHIL <span>KTK</span> ✧</div>
+ <nav>
+  <a href="#home">Home</a>
+  <a href="#discover">Discover</a>
+  <a href="#mood">Mood</a>
+ </nav>
+</header>
+
+<section class="hero" id="home">
+ <div>
+  <span class="moon">☾</span>
+  <div class="eyebrow">A little world of wonder</div>
+  <h1>Welcome to<br><span>Minahil's World</span></h1>
+  <p class="subtitle">
+   A dreamy little corner filled with stardust,
+   soft moments, beautiful thoughts, and a little magic.
+  </p>
+  <a class="btn" href="#discover">Explore Your World ✧</a>
+  <a class="btn outline" href="#mood">A Little Surprise ♡</a>
+ </div>
+</section>
+
+<section id="discover" class="wrap">
+ <div class="heading">
+  <div class="eyebrow">Made of moonlight & dreams</div>
+  <h2>Little Things, Big Magic</h2>
+  <p>Tap a card and discover a little something.</p>
+ </div>
+
+ <div class="cards">
+  <div class="card" onclick="reveal('stars')">
+   <div class="emoji">🌙</div>
+   <h3>Dream Corner</h3>
+   <p>A little reminder to keep dreaming.</p>
+  </div>
+  <div class="card" onclick="reveal('flowers')">
+   <div class="emoji">🌷</div>
+   <h3>Flower Garden</h3>
+   <p>Some flowers for a brighter day.</p>
+  </div>
+  <div class="card" onclick="reveal('magic')">
+   <div class="emoji">🦋</div>
+   <h3>Secret Magic</h3>
+   <p>Something unexpected is waiting.</p>
+  </div>
+ </div>
+ <div id="message">Your next little discovery is just one click away ✨</div>
+</section>
+
+<section id="mood" class="wrap">
+ <div class="heading">
+  <div class="eyebrow">How are you feeling today?</div>
+  <h2>Your Mood Universe</h2>
+  <p>Choose your mood and let the universe send you a note.</p>
+ </div>
+ <div class="panel">
+  <div class="moodbuttons">
+   <button onclick="mood('happy')">☀️ Happy</button>
+   <button onclick="mood('sad')">🌧️ A little sad</button>
+   <button onclick="mood('tired')">🌙 Tired</button>
+   <button onclick="mood('dreamy')">✨ Dreamy</button>
+  </div>
+  <p id="moodMessage">Your little message will appear here 💗</p>
+ </div>
+</section>
+
+<section class="wrap">
+ <div class="panel">
+  <div class="emoji">💌</div>
+  <h2 style="font:normal 32px Georgia,serif">A Note for You</h2>
+  <p>
+   May your days be filled with little joys, your dreams with possibility,
+   and your world with people who appreciate the person you are.
+  </p>
+  <button class="btn" onclick="openNote()">Open Your Note ♡</button>
+  <p id="note" style="display:none;color:#f7cce8">
+   Keep shining in your own way, Minahil. The world is more beautiful
+   when you give yourself room to grow, dream, and be yourself. 🌸
+  </p>
+ </div>
+</section>
+
+<footer>
+ MADE WITH ✧ BY MINAHIL KTK
+ <br><br>
+ A little universe of my own.
+</footer>
+
+<script>
+function reveal(type){
+ const messages={
+  stars:"Even the smallest star can brighten a very dark sky. Keep shining. ✨",
+  flowers:"Imagine a garden full of flowers, each one wishing you a beautiful day. 🌷",
+  magic:"Surprise! You just found a little pocket of happiness. Keep it with you. 🦋"
+ };
+ document.getElementById("message").textContent=messages[type];
+}
+function mood(type){
+ const messages={
+  happy:"Keep that beautiful energy going. May you have a hundred more reasons to smile! ☀️",
+  sad:"It's okay to have difficult days. Be gentle with yourself; brighter moments can come. 🌷",
+  tired:"Take a breath. Rest is productive too. You deserve a peaceful moment. 🌙",
+  dreamy:"Let your imagination wander. Wonderful things begin with little dreams. ✨"
+ };
+ document.getElementById("moodMessage").textContent=messages[type];
+}
+function openNote(){
+ const n=document.getElementById("note");
+ n.style.display=n.style.display==="none"?"block":"none";
+}
+
+/* Animated starry sky */
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
+let stars=[];
+function resize(){
+ canvas.width=window.innerWidth;
+ canvas.height=window.innerHeight;
+ stars=Array.from({length:90},()=>({
+  x:Math.random()*canvas.width,
+  y:Math.random()*canvas.height,
+  r:Math.random()*1.5+.3,
+  a:Math.random(),
+  s:Math.random()*.012+.003
+ }));
+}
+function draw(){
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+ stars.forEach(s=>{
+  s.a+=s.s;
+  ctx.beginPath();
+  ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+  ctx.fillStyle="rgba(255,225,255,"+(.25+.65*Math.abs(Math.sin(s.a)))+")";
+  ctx.fill();
+ });
+ requestAnimationFrame(draw);
+}
+window.addEventListener("resize",resize);
+resize();
+draw();
+</script>
+</body>
+</html>
